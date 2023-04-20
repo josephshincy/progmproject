@@ -14,9 +14,6 @@ deaths_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/c
 # Read the data into a DataFrame
 deaths_df = pd.read_csv(deaths_url)
 
-# URLs for the confirmed cases and deaths data
-deaths_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"
-
 # Read the data into dataframes
 deaths_df = pd.read_csv(deaths_url)
 
