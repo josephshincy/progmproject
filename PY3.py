@@ -17,7 +17,7 @@ def getalpha(stock):
 
 #define a function that takes in the accepted ticker for the required stock and returns that stock's daily adjusted information from yfinance
 def getyahoo(stock):
-  ydata = pd.DataFrame(yf.download(stock))
+  ydata = pd.DataFrame(yf.Ticker(stock).history(period="10y"))
   return ydata
 
 #define stocks to gather data for
