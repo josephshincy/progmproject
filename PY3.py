@@ -1,7 +1,7 @@
 #Get Stock daily high and low data and save in dataframe
 
 #import required libraries
-#first install packages numpy, pandas, matplotlib, alpha_vantage, yfinance
+#first check that you have installed packages pandas and yfinance
 #import required libraries
 import pandas as pd
 
