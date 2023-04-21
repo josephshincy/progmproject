@@ -1,3 +1,4 @@
+
 from PY1 import deaths_df, confirmed_cases_df
 import pandas as pd
 confirmed_cases = confirmed_cases_df.drop(columns=['Province/State','Country/Region','Lat','Long'])
