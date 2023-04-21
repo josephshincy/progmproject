@@ -4,6 +4,7 @@
 #first check that you have installed packages pandas and yfinance
 #import required libraries
 import pandas as pd
+import DateTime as dt
 
 import yfinance as yf
 
@@ -53,4 +54,10 @@ e.columns = [f'{stock_e}_high',f'{stock_e}_low']
 
 #combine into one dataframe with all high and low values for all stocks
 stocks_high_low = pd.concat([a,b,c,d,e], axis = 1)
+index_series = pd.DataFrame(stocks_high_low.index)
+index_series['Date'] = index_series['Date'].dt.date
+stocks_high_low.index = index_series['Date']
+stocks_high_low.index = pd.to_datetime(stocks_high_low.index)
+
 print(stocks_high_low.head(30))
+print(stocks_high_low.index.dtype)
