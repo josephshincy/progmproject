@@ -54,6 +54,7 @@ e.columns = [f'{stock_e}_high',f'{stock_e}_low']
 
 #combine into one dataframe with all high and low values for all stocks
 stocks_high_low = pd.concat([a,b,c,d,e], axis = 1)
+#adjust dtype of index to match with index of covid data for combining later
 index_series = pd.DataFrame(stocks_high_low.index)
 index_series['Date'] = index_series['Date'].dt.date
 stocks_high_low.index = index_series['Date']
