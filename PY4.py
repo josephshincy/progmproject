@@ -6,4 +6,6 @@ import pandas as pd
 
 #combine dataframes of covid data and stock data
 stocks_covid = pd.concat([covid_data,stocks_high_low], axis = 1)
+#keep only data from 2018 onwards
+stocks_covid = stocks_covid[(stocks_covid.index >= '2018-01-01')]
 print(stocks_covid)

@@ -1,7 +1,7 @@
 #Get Stock daily high and low data and save in dataframe
 
 #import required libraries
-#first check that you have installed packages pandas and yfinance
+#first check that you have installed packages pandas, DateTime and yfinance
 #import required libraries
 import pandas as pd
 import DateTime as dt
