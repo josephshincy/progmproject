@@ -1,5 +1,11 @@
- from PY1 import
- import matplotlib.pyplot as plt
+from PY2 import confirmed_cases, covid_deaths
+import matplotlib.pyplot as plt
+# Create bar chart
+plt.bar(confirmed_cases, covid_deaths)
+# Customize chart appearance
+plt.xlabel('Confirmed_cases')  # Set x-axis label
+plt.ylabel('covid_deaths')  # Set y-axis label
+plt.title('Bar Chart ')  # Set chart title
 
-# Create a bar chart of the global confirmed cases and deaths
-plt.bar(x=["Confirmed Cases", "Deaths"])
+# Show chart
+plt.show()
