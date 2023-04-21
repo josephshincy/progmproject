@@ -2,5 +2,8 @@
 from PY2 import covid_data
 from PY3 import stocks_high_low
 
+import pandas as pd
+
 #combine dataframes of covid data and stock data
 stocks_covid = pd.concat([covid_data,stocks_high_low], axis = 1)
+print(stocks_covid)
