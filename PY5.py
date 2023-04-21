@@ -2,7 +2,7 @@
 
 #first check that you have installed packages pandas and matplotlib
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from PY4 import stocks_covid
 
 #plot line time series of all
@@ -20,4 +20,5 @@ for x in stock_columns:
   i+=1
 fig.suptitle('Stock Daily High/Low over Time')
 fig.tight_layout()
+plt.show()
 
