@@ -20,6 +20,4 @@ print(covid_deaths)
 covid_deaths.index =pd.to_datetime(covid_deaths.index)
 print(covid_deaths)
 covid_data = pd.concat ([confirmed_cases, covid_deaths], axis = 1)
-print (covid_data)
-
-print ("add a new information")
+print(covid_data)

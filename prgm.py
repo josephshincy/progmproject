@@ -1,6 +1,23 @@
- programming-project
-pip install yfinance
+!pip install yfinance
 import pandas as pd
+
+# URL for the confirmed cases data
+confirmed_cases_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
+
+# Read the data into a DataFrame
+confirmed_cases_df = pd.read_csv(confirmed_cases_url)
+
+# URL for the deaths data
+deaths_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"
+
+# Read the data into a DataFrame
+deaths_df = pd.read_csv(deaths_url)
+
+# URLs for the confirmed cases and deaths data
+deaths_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv"
+
+# Read the data into dataframes
+deaths_df = pd.read_csv(deaths_url)import pandas as pd
 
 # URL for the confirmed cases data
 confirmed_cases_url = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv"
@@ -38,7 +55,7 @@ import yfinance as yf
 spy = yf.Ticker("SPY")
 
 # Overall Canadian Market: S&P/TSX Composite Index
-xic = yf.Ticker("^GSPTSE")
+xic = yf.Ticker("GSPTSE")
 
 # Travel sector: Delta Air Lines
 dal = yf.Ticker("DAL")
@@ -110,7 +127,6 @@ stock_prices_df = pd.concat(dfs, axis=1)
 print(stock_prices_df)
 # Append the stock prices to the global totals dataframe
 combined_df = pd.concat([global_totals_df, stock_prices_df], axis=1)
-
 # Print the combined dataframe
 print(combined_df)
 import matplotlib.pyplot as plt
