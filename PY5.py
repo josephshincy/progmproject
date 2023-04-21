@@ -1,4 +1,4 @@
- from PY4 import stocks_covid
+ from PY1 import
  import matplotlib.pyplot as plt
 
 # Create a bar chart of the global confirmed cases and deaths
