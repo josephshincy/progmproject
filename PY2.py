@@ -21,4 +21,3 @@ print(covid_deaths)
 covid_data = pd.concat ([confirmed_cases, covid_deaths], axis = 1)
 print (covid_data)
 
-print ("add a new information")
