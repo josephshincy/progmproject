@@ -51,3 +51,16 @@ for x in covid_columns:
 fig3.suptitle('covid confirmed cases and deaths over time')
 fig3.tight_layout()
 plt.show()
+
+fig4, ax4 =plt.subplots (2, figsize = (12,6))
+covid_columns =stocks_covid_2020Drop.columns[:2]
+r4 =0
+for x in covid_columns:
+  ax4[r4].plot(stocks_covid_2020Drop.index, stocks_covid_2020Drop[x], label=x)
+  ax4[r4].legend(bbox_to_anchor = (0.15,0.3))
+  ax4[r4].set_ylabel(f'Cumulatibve Number of {x}')
+  r4+=1
+
+fig4.suptitle('Covid Confirmed Cases and Deaths over Time (focused on Stock Market Drop in 2020)')
+fig4.tight_layout
+plt.show()
