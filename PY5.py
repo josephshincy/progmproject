@@ -2,8 +2,9 @@
 
 # first check that you have installed packages pandas and matplotlib
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
 from PY4 import stocks_covid
+from PY2 import covid_deaths,confirmed_cases
 
 # plot line time series of all
 fig, ax = plt.subplots(5, figsize=(15, 12))
@@ -37,4 +38,16 @@ for x in stock_columns:
   i2+=1
 fig2.suptitle('Stock Daily High/Low over Time (focused on Drop in 2020)')
 fig2.tight_layout()
+plt.show()
+
+fig3, ax3 = plt.subplots(2, figsize=(15, 12))
+covid_columns = stocks_covid.columns[:2]
+r3 = 0
+for x in covid_columns:
+    ax3[r3].plot(stocks_covid.index, stocks_covid[x], label=x)
+    ax3[r3].legend(bbox_to_anchor=(1, 0.3))
+    ax3[r3].set_ylabel(f'cumulative number{x}')
+    r3 += 1
+fig3.suptitle('covid confirmed cases and deaths over time')
+fig3.tight_layout()
 plt.show()
