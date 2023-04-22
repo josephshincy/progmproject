@@ -64,3 +64,21 @@ for x in covid_columns:
 fig4.suptitle('Covid Confirmed Cases and Deaths over Time (focused on Stock Market Drop in 2020)')
 fig4.tight_layout
 plt.show()
+
+#isolate only date window when covid data available (2020-01-22 to 2023-03-09)
+stocks_covid_isolated = stocks_covid[(stocks_covid.index >= '2020-01-22') & (stocks_covid.index <= '2023-03-09')]
+#create new columns to convert cumulative values to daily values for cases and deaths
+stocks_covid_isolated['confirmed_cases_daily'] = stocks_covid_isolated['confirmed_cases'].diff().fillna(stocks_covid_isolated['confirmed_cases'])
+stocks_covid_isolated['covid_deaths_daily'] = stocks_covid_isolated['covid_deaths'].diff().fillna(stocks_covid_isolated['covid_deaths'])
+
+#Plot Daily values of confirmed cases and covid deaths
+fig5, ax5 =plt.subplots (2, figsize = (15,6))
+ax5[0].plot(stocks_covid_isolated.index, stocks_covid_isolated['confirmed_cases_daily'], label='daily_confirmed_cases')
+ax5[0].legend(bbox_to_anchor = (0.3,1))
+ax5[0].set_ylabel('Daily Number of Confirmed Cases')
+ax5[1].plot(stocks_covid_isolated.index, stocks_covid_isolated['covid_deaths_daily'], label='daily_covid_deaths', color='g')
+ax5[1].legend(bbox_to_anchor = (0.3,1))
+ax5[1].set_ylabel('Daily Number of Covid Deaths')
+fig5.suptitle('Daily Covid Confirmed Cases and Deaths over Time')
+fig5.tight_layout
+plt.show()
